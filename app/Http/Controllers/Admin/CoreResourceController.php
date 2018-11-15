@@ -69,7 +69,7 @@ class CoreResourceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
     }
 
     /**

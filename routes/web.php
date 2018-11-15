@@ -22,7 +22,8 @@ Route::get('/about/{id}', 'FirstController@show');
 Route::get('/articles', 'Admin\Core@getArticles')
     ->name('articles');
 
-Route::get('/article/{id}', 'Admin\Core@getArticle')
+Route::get('/article/{page}', 'Admin\Core@getArticle')
+    ->middleware('mymiddle:admin')
     ->name('article');
 
 Route::resource('/pages', 'Admin\CoreResourceController',['except' =>[
