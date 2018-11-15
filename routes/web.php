@@ -16,3 +16,15 @@ Route::get('/', function () {
 });
 
 Route::get('/page', 'TestController@index' );
+
+Route::get('/about/{id}', 'FirstController@show');
+
+Route::get('/articles', 'Admin\Core@getArticles')
+    ->name('articles');
+
+Route::get('/article/{id}', 'Admin\Core@getArticle')
+    ->name('article');
+
+Route::resource('/pages', 'Admin\CoreResourceController',['except' =>[
+    'create','update'
+]]);
