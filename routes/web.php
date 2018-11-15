@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/page', 'TestController@index' );
+Route::get('/page', 'TestController@index');
 
 Route::get('/about/{id}', 'FirstController@show');
 
