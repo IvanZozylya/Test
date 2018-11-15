@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('/page', 'TestController@index');
+Route::post('/page', 'TestController@store');
 
 Route::get('/about/{id}', 'FirstController@show');
 
