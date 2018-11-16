@@ -28,6 +28,9 @@ class ChangeArticlesTable extends Migration
     public function down()
     {
         Schema::table('articles', function (Blueprint $table) {
+            $table->renameColumn('text','description');
+            $table->string('name','100')->change();
+            $table->dropColumn('deleted_at');
         });
     }
 }
