@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Article;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -12,11 +13,16 @@ use App\Http\Controllers\Controller;
  */
 class Core extends Controller
 {
-
     //list material
     public function getArticles()
     {
 
+        $article = Article::find(31);
+        $article->forceDelete();
+
+        $articles = Article::all();
+
+        dump($articles);
     }
 
     /**
@@ -25,6 +31,8 @@ class Core extends Controller
      */
     public function getArticle($id)
     {
-        echo ' Ответ: '.$id;
+        echo ' Ответ: ' . $id;
     }
 }
+
+?>
