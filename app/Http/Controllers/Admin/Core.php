@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Article;
+use App\Country;
+use App\Role;
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -17,13 +20,14 @@ class Core extends Controller
     public function getArticles()
     {
 
-        $article = Article::find(31);
-        $article->forceDelete();
+        $user = User::find(2);
+        foreach ($user->roles as $role){
+            echo $role->name."<br>";
+        }
+        dump($role->users);
 
-        $articles = Article::all();
-
-        dump($articles);
     }
+
 
     /**
      * @param $id

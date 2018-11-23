@@ -14,4 +14,9 @@ class Article extends Model
     ];
 
     protected $dates = ['deleted_at'];
+
+    public function user(){
+
+        return $this->belongsTo(User::class);
+    }
 }
