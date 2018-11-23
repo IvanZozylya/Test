@@ -19,4 +19,14 @@ class Article extends Model
 
         return $this->belongsTo(User::class);
     }
+
+    public function getNameAttribute($value)
+    {
+        return 'Hello world - '.$value;
+    }
+
+    public function setNameAttribute($value)
+    {
+        $this->attributes['name'] = '|'.$value.'|';
+    }
 }

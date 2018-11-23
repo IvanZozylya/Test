@@ -23,7 +23,6 @@ class Core extends Controller
     {
 
 
-
         return;
     }
 
