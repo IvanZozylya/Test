@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TestRequest;
 use Illuminate\Http\Response;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Validator;
 use Route;
 
 /**
@@ -32,17 +33,20 @@ class TestController extends Controller
      * @param Request $request
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function store(Request $request)
+
+    public function store(TestRequest $request)
     {
         if ($request->isMethod('POST')) {
 
-            $rules = [
-                'name' => 'alpha_num',
-                'email' => 'required|email',
-            ];
-
-            $this->validate($request, $rules);
-
+//            $messages = [];
+//
+//            $validator = Validator::make($request->all(), [
+//                'name' => 'required'
+//            ], $messages);
+//
+//            if($validator->fails()){
+//                return redirect()->back()->withErrors($validator)->withInput();
+//            }
             dd($request->all());
         }
 
