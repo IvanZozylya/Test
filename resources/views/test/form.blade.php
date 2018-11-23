@@ -1,4 +1,4 @@
-<form method="post" action="{{url('/page')}}">
+<form method="post" action="{{route('testForm')}}">
     <div class="form-group">
         <label for="email">Name</label>
         <input type="text" class="form-control" name="name" placeholder="Введите имя" value="{{old('name')}}" >
@@ -11,7 +11,7 @@
         <input type="password" class="form-control" name="pass" placeholder="Пароль">
     </div>
     <div class="checkbox">
-        <label><input type="checkbox"> Чекбокс</label>
+        <label><input type="checkbox" value="false"> Чекбокс</label>
     </div>
     <button type="submit" class="btn btn-success">Войти</button>
     {{ method_field('POST') }}

@@ -21,6 +21,9 @@ class Core extends Controller
 
     public function getArticles()
     {
+        $article = Article::all();
+
+        dump($article->pluck('role'));
 
 
         return;

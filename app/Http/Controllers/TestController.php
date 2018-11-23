@@ -13,9 +13,7 @@ use Route;
  */
 class TestController extends Controller
 {
-    /**
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
+
     public function index()
     {
 
@@ -26,7 +24,7 @@ class TestController extends Controller
             ])->render();
 
             return response($view)
-                ->header('Name','Ivan');
+                ->header('Name', 'Ivan');
         }
     }
 
@@ -36,9 +34,19 @@ class TestController extends Controller
      */
     public function store(Request $request)
     {
+        if ($request->isMethod('POST')) {
 
-        return redirect()->route('article', ['page']);
+            $rules = [
+                'name' => 'alpha_num',
+                'email' => 'required|email',
+            ];
 
+            $this->validate($request, $rules);
+
+            dd($request->all());
+        }
+
+        return redirect()->route('defaultShow');
 
 
     }
