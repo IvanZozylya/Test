@@ -19,7 +19,6 @@ class CreateArticlesTable extends Migration
                 $table->engine = 'InnoDB';
                 $table->increments('id');
                 $table->string('name', 100);
-                $table->string('email', 100)->unique();
                 $table->text('description')->nullable();
                 $table->boolean('role')->default(0);
                 $table->timestamps();

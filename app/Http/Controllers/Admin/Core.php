@@ -17,15 +17,14 @@ use App\Http\Controllers\Controller;
 class Core extends Controller
 {
     //list material
+
+
     public function getArticles()
     {
 
-        $user = User::find(2);
-        foreach ($user->roles as $role){
-            echo $role->name."<br>";
-        }
-        dump($role->users);
 
+
+        return;
     }
 
 
