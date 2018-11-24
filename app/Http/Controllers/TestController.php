@@ -34,20 +34,26 @@ class TestController extends Controller
      * @throws \Illuminate\Validation\ValidationException
      */
 
-    public function store(TestRequest $request)
+    public function store(Request $request)
     {
         if ($request->isMethod('POST')) {
 
-//            $messages = [];
-//
-//            $validator = Validator::make($request->all(), [
-//                'name' => 'required'
-//            ], $messages);
-//
-//            if($validator->fails()){
-//                return redirect()->back()->withErrors($validator)->withInput();
-//            }
-            dd($request->all());
+            $messages = [
+                'required' => 'Поле :attribute обязательно к заполнению.',
+                'max' => 'Максимально допустимое количество символов - :max.',
+                ];
+
+            $validator = Validator::make($request->all(), [
+                'name' => 'required',
+                'email' => 'required'
+            ], $messages);
+
+            if($validator->fails()){
+
+                dd($validator->errors()->messages());
+                return redirect()->back()->withErrors($validator)->withInput();
+            }
+
         }
 
         return redirect()->route('defaultShow');

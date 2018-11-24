@@ -126,8 +126,12 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'name' => [
+            'required' => 'Поле name обязательно к заполнению.',
+        ],
+        'email' => [
+            'max' => 'Максимально допустимое количество символов для поля :attribute - :max.',
+            'required' => 'Email обязателен к заполнению',
         ],
     ],
 

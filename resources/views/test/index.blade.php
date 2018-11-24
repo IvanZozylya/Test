@@ -5,11 +5,11 @@
 @section('content')
     <div class="container">
             @if(count($errors) > 0)
-                <div class="alert alert-danger">
+                <ul class="alert alert-danger">
                     @foreach($errors->all() as $error)
-                        {{$error}}
+                        <li>{{$error}}</li>
                     @endforeach
-                </div>
+                </ul>
             @endif
                 @if (session('status'))
                     <div class="alert alert-success">
