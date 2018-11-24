@@ -30,3 +30,7 @@ Route::get('/article/{page}', 'Admin\Core@getArticle')
 Route::resource('/pages', 'Admin\CoreResourceController',['except' =>[
     'create','update'
 ]]);
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
