@@ -6,6 +6,7 @@ use App\Article;
 use App\Country;
 use App\Role;
 use App\User;
+use Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -21,9 +22,6 @@ class Core extends Controller
 
     public function getArticles()
     {
-        $article = Article::all();
-
-        dump($article->pluck('role'));
 
 
         return;

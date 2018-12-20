@@ -16,7 +16,11 @@
                         {{ session('status') }}
                     </div>
                 @else
+                    @can('create')
+                        hello
+                    @endcan
                 @include('test.form')
+
                 @endif
     </div>
 
