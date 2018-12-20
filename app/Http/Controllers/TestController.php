@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Article;
+use App\Events\onAddArticleEvent;
 use App\Http\Requests\TestRequest;
 use App\User;
+use Event;
 use Gate;
 use Illuminate\Http\Response;
 use Illuminate\Http\Request;
